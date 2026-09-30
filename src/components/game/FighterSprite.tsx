@@ -55,7 +55,7 @@ export function FighterSprite({ fighter, anim, side }: Props) {
             transform: mirrored ? "scaleX(-1)" : undefined,
           } as React.CSSProperties
         }
-        className={`pixelated max-h-full w-auto object-contain drop-shadow-[0_10px_18px_rgba(0,0,0,0.55)] ${animClass}`}
+        className={`pixelated h-full w-auto object-contain drop-shadow-[0_10px_18px_rgba(0,0,0,0.55)] ${animClass}`}
       />
     </div>
   );
