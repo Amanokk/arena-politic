@@ -40,7 +40,14 @@ const STATUS_LABEL = {
 
 function OverlayPage() {
   const [settings, setSettings] = useState<Settings | null>(null);
-  useEffect(() => setSettings(loadSettings()), []);
+  useEffect(() => {
+    setSettings(loadSettings());
+    const prev = document.body.style.background;
+    document.body.style.background = "transparent";
+    return () => {
+      document.body.style.background = prev;
+    };
+  }, []);
 
   if (!settings) return <div className="min-h-screen overlay-root" />;
   return <OverlayGame initial={settings} />;
