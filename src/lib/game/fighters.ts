@@ -46,7 +46,7 @@ export const FIGHTERS: FighterDef[] = [
 ];
 
 export function getFighter(id: string): FighterDef {
-  return FIGHTERS.find((f) => f.id === id) ?? FIGHTERS[0];
+  return FIGHTERS.find((f) => f.id === id) ?? (FIGHTERS[0] as FighterDef);
 }
 
 export const DEFAULT_RULES: GiftRule[] = [
