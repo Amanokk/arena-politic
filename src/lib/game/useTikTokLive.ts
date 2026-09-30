@@ -25,20 +25,20 @@ export function useTikTokLive(opts: {
   const parse = useCallback((payload: unknown): RawGift | null => {
     if (!payload || typeof payload !== "object") return null;
     const m = payload as Record<string, unknown>;
-    const kind = String(m.event ?? m.type ?? "").toLowerCase();
+    const kind = String(m["event"] ?? m["type"] ?? "").toLowerCase();
     if (kind && kind !== "gift") return null;
-    const data = (m.data as Record<string, unknown>) ?? m;
-    const gift = data.giftName ?? data.gift ?? data.giftname;
+    const data = (m["data"] as Record<string, unknown>) ?? m;
+    const gift = data["giftName"] ?? data["gift"] ?? data["giftname"];
     if (!gift) return null;
-    const repeatEnd = data.repeatEnd;
-    const giftType = data.giftType ?? data.gift_type;
+    const repeatEnd = data["repeatEnd"];
+    const giftType = data["giftType"] ?? data["gift_type"];
     // presentes "streakable" só contam no fim da sequência
     if (giftType === 1 && repeatEnd === false) return null;
     return {
-      user: String(data.nickname ?? data.uniqueId ?? data.user ?? "anônimo"),
+      user: String(data["nickname"] ?? data["uniqueId"] ?? data["user"] ?? "anônimo"),
       gift: String(gift),
-      count: Number(data.repeatCount ?? data.count ?? 1) || 1,
-      coins: Number(data.diamondCount ?? data.coins ?? 0) || 0,
+      count: Number(data["repeatCount"] ?? data["count"] ?? 1) || 1,
+      coins: Number(data["diamondCount"] ?? data["coins"] ?? 0) || 0,
     };
   }, []);
 
