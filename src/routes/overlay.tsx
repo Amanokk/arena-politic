@@ -113,8 +113,8 @@ function OverlayGame({ initial }: { initial: Settings }) {
       )}
 
       {/* HUD topo */}
-      <div className="absolute inset-x-0 top-0 z-20 flex items-start gap-4 p-4">
-        <div className="flex-1">
+      <div className="absolute inset-x-0 top-0 z-20 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-1 p-2 sm:gap-4 sm:p-4">
+        <div className="min-w-0">
           <HealthBar
             name={left.name}
             portrait={left.sprites.portrait}
@@ -124,7 +124,7 @@ function OverlayGame({ initial }: { initial: Settings }) {
             side="left"
           />
         </div>
-        <div className="mt-2 text-center">
+        <div className="mt-1 shrink-0 text-center sm:mt-2">
           <div className="font-display text-xs text-primary drop-shadow-[0_2px_0_rgba(0,0,0,0.9)]">
             {state.hits}
           </div>
@@ -139,7 +139,7 @@ function OverlayGame({ initial }: { initial: Settings }) {
             {STATUS_LABEL[state.status]}
           </div>
         </div>
-        <div className="flex-1">
+        <div className="min-w-0">
           <HealthBar
             name={right.name}
             portrait={right.sprites.portrait}
@@ -158,17 +158,17 @@ function OverlayGame({ initial }: { initial: Settings }) {
       )}
 
       {/* Arena */}
-      <div className="absolute inset-x-0 bottom-0 top-28 z-10 grid grid-cols-2 items-end gap-4 px-8 pb-10">
-        <div className="h-[55vh]">
+      <div className="absolute inset-x-0 bottom-[8vh] top-24 z-10 grid grid-cols-2 items-end gap-2 px-3 sm:bottom-8 sm:top-28 sm:gap-8 sm:px-[7vw] portrait:bottom-[12vh]">
+        <div className="h-[min(52vh,560px)] min-h-0 min-w-0">
           <FighterSprite fighter={left} anim={anim.left} side="left" />
         </div>
-        <div className="h-[55vh]">
+        <div className="h-[min(52vh,560px)] min-h-0 min-w-0">
           <FighterSprite fighter={right} anim={anim.right} side="right" />
         </div>
       </div>
 
       {/* Feed lateral */}
-      <div className="absolute bottom-6 left-4 z-20">
+      <div className="absolute bottom-3 left-2 z-20 scale-75 origin-bottom-left sm:bottom-6 sm:left-4 sm:scale-100">
         <GiftFeed items={state.feed} />
       </div>
 
@@ -176,7 +176,7 @@ function OverlayGame({ initial }: { initial: Settings }) {
       {state.feed[0] && (
         <div
           key={state.feed[0].id}
-          className="anim-float absolute bottom-40 left-1/2 z-20 -translate-x-1/2 text-center"
+          className="anim-float absolute bottom-[34vh] left-1/2 z-20 -translate-x-1/2 text-center sm:bottom-40"
         >
           <div className="font-display text-sm text-primary drop-shadow-[0_3px_0_rgba(0,0,0,0.9)]">
             @{state.feed[0].user}

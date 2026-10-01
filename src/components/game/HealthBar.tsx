@@ -15,20 +15,20 @@ export function HealthBar({ name, portrait, hp, maxHp, energy, side }: Props) {
 
   return (
     <div
-      className={`flex items-center gap-2 ${mirrored ? "flex-row-reverse" : "flex-row"}`}
+      className={`flex min-w-0 items-center gap-1 sm:gap-2 ${mirrored ? "flex-row-reverse" : "flex-row"}`}
     >
-      <div className="h-14 w-14 shrink-0 overflow-hidden rounded-sm border-2 border-primary bg-card">
+      <div className="h-10 w-10 shrink-0 overflow-hidden rounded-sm border-2 border-primary bg-card sm:h-14 sm:w-14">
         <img src={portrait} alt={name} className="h-full w-full object-cover pixelated" />
       </div>
-      <div className="flex-1">
+      <div className="min-w-0 flex-1">
         <div
-          className={`mb-1 font-display text-[10px] tracking-wider text-foreground drop-shadow-[0_2px_0_rgba(0,0,0,0.9)] ${
+          className={`mb-1 truncate font-display text-[7px] tracking-wider text-foreground drop-shadow-[0_2px_0_rgba(0,0,0,0.9)] sm:text-[10px] ${
             mirrored ? "text-right" : "text-left"
           }`}
         >
           {name}
         </div>
-        <div className="h-5 w-full border-2 border-primary bg-secondary/80 p-[2px]">
+        <div className="h-4 w-full border-2 border-primary bg-secondary/80 p-[2px] sm:h-5">
           <div
             className={`hp-bar h-full transition-[width] duration-300 ease-out ${
               mirrored ? "ml-auto" : ""

@@ -32,12 +32,13 @@ export function FighterSprite({ fighter, anim, side }: Props) {
             : "";
 
   return (
-    <div className="relative flex h-full items-end justify-center">
+    <div
+      className="relative flex h-full min-h-0 w-full items-end justify-center"
+      style={{ transform: mirrored ? "scaleX(-1)" : undefined }}
+    >
       {anim === "special" && (
         <div
-          className={`anim-blast pointer-events-none absolute bottom-[18%] h-24 w-56 ${
-            mirrored ? "right-1/2 -scale-x-100" : "left-1/2"
-          }`}
+          className="anim-blast pointer-events-none absolute bottom-[18%] left-1/2 h-24 w-56"
           style={{
             background:
               "radial-gradient(closest-side, var(--brasil-yellow), var(--brasil-green) 55%, transparent 80%)",
@@ -52,10 +53,9 @@ export function FighterSprite({ fighter, anim, side }: Props) {
           {
             "--knock": mirrored ? "14px" : "-14px",
             "--fall": mirrored ? "-80deg" : "80deg",
-            transform: mirrored ? "scaleX(-1)" : undefined,
           } as React.CSSProperties
         }
-        className={`pixelated h-full w-auto object-contain drop-shadow-[0_10px_18px_rgba(0,0,0,0.55)] ${animClass}`}
+        className={`pixelated max-h-full max-w-full object-contain drop-shadow-[0_10px_18px_rgba(0,0,0,0.55)] ${animClass}`}
       />
     </div>
   );
