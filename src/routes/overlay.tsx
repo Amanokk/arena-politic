@@ -159,10 +159,10 @@ function OverlayGame({ initial }: { initial: Settings }) {
 
       {/* Arena */}
       <div className="absolute inset-x-0 bottom-[8vh] top-24 z-10 grid grid-cols-2 items-end gap-2 px-3 sm:bottom-8 sm:top-28 sm:gap-8 sm:px-[7vw] portrait:bottom-[12vh]">
-        <div className="h-[min(52vh,560px)] min-h-0 min-w-0">
+        <div className="h-[clamp(180px,34vh,430px)] min-h-0 min-w-0">
           <FighterSprite fighter={left} anim={anim.left} side="left" />
         </div>
-        <div className="h-[min(52vh,560px)] min-h-0 min-w-0">
+        <div className="h-[clamp(180px,34vh,430px)] min-h-0 min-w-0">
           <FighterSprite fighter={right} anim={anim.right} side="right" />
         </div>
       </div>
