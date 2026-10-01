@@ -1,16 +1,16 @@
 import type { FighterDef, GiftRule, Settings } from "./types";
 
-import lulaIdle from "@/assets/lula-idle.png.asset.json";
-import lulaPunch from "@/assets/lula-punch.png.asset.json";
-import lulaKick from "@/assets/lula-kick.png.asset.json";
-import lulaSpecial from "@/assets/lula-special.png.asset.json";
+import lulaIdle from "@/assets/lula-idle-clean.png.asset.json";
+import lulaPunch from "@/assets/lula-punch-clean.png.asset.json";
+import lulaKick from "@/assets/lula-kick-clean.png.asset.json";
+import lulaSpecial from "@/assets/lula-special-clean.png.asset.json";
 import lulaVictory from "@/assets/lula-victory.png.asset.json";
 import lulaPortrait from "@/assets/lula-portrait.png.asset.json";
 
-import flavioIdle from "@/assets/flavio-idle.png.asset.json";
-import flavioPunch from "@/assets/flavio-punch.png.asset.json";
-import flavioKick from "@/assets/flavio-kick.png.asset.json";
-import flavioSpecial from "@/assets/flavio-special.png.asset.json";
+import flavioIdle from "@/assets/flavio-idle-clean.png.asset.json";
+import flavioPunch from "@/assets/flavio-punch-clean.png.asset.json";
+import flavioKick from "@/assets/flavio-kick-clean.png.asset.json";
+import flavioSpecial from "@/assets/flavio-special-clean.png.asset.json";
 import flavioVictory from "@/assets/flavio-victory.png.asset.json";
 import flavioPortrait from "@/assets/flavio-portrait.png.asset.json";
 
