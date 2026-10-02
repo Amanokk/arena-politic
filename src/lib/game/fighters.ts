@@ -1,13 +1,13 @@
 import type { FighterDef, GiftRule, Settings } from "./types";
 
-import lulaIdle from "@/assets/lula-idle-clean.png.asset.json";
+import lulaIdle from "@/assets/lula-idle-hq.png";
 import lulaPunch from "@/assets/lula-punch-clean.png.asset.json";
 import lulaKick from "@/assets/lula-kick-clean.png.asset.json";
 import lulaSpecial from "@/assets/lula-special-clean.png.asset.json";
 import lulaVictory from "@/assets/lula-victory.png.asset.json";
 import lulaPortrait from "@/assets/lula-portrait.png.asset.json";
 
-import flavioIdle from "@/assets/flavio-idle-clean.png.asset.json";
+import flavioIdle from "@/assets/flavio-idle-hq.png";
 import flavioPunch from "@/assets/flavio-punch-clean.png.asset.json";
 import flavioKick from "@/assets/flavio-kick-clean.png.asset.json";
 import flavioSpecial from "@/assets/flavio-special-clean.png.asset.json";
@@ -21,7 +21,7 @@ export const FIGHTERS: FighterDef[] = [
     tagline: "O povo é a minha força",
     accent: "var(--team-red)",
     sprites: {
-      idle: lulaIdle.url,
+      idle: lulaIdle,
       punch: lulaPunch.url,
       kick: lulaKick.url,
       special: lulaSpecial.url,
@@ -35,7 +35,7 @@ export const FIGHTERS: FighterDef[] = [
     tagline: "Brasil acima de tudo",
     accent: "var(--team-blue)",
     sprites: {
-      idle: flavioIdle.url,
+      idle: flavioIdle,
       punch: flavioPunch.url,
       kick: flavioKick.url,
       special: flavioSpecial.url,
